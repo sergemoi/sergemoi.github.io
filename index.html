@@ -3,7 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bdgt - Monthly Budget Tracker</title>
+    <title>Bdgt - Simple Monthly Budget Tracker for iOS | Privacy-First Budgeting App</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Bdgt is a small, monthly budget tracker for iOS focused on simplicity. Track expenses with minimum setup, no currency, just numbers. All data stays on your device.">
+    <meta name="keywords" content="budget tracker, iOS app, monthly budget, expense tracker, easy, simple budgeting, personal finance, budget app">
+    <meta name="author" content="Bdgt">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://thebdgt.app">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thebdgt.app">
+    <meta property="og:title" content="Bdgt - Monthly Budget Tracker for iOS">
+    <meta property="og:description" content="Bdgt is a small, monthly budget tracker for iOS focused on simplicity. Minimum setup, no currency, just numbers. All your data stays on your device.">
+    <meta property="og:image" content="https://thebdgt.app/images/1024.png">
+    <meta property="og:site_name" content="Bdgt">
+    
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://thebdgt.app">
+    <meta property="twitter:title" content="Bdgt - Monthly Budget Tracker for iOS">
+    <meta property="twitter:description" content="Bdgt is a small, monthly budget tracker for iOS focused on simplicity. Minimum setup, no currency, just numbers. All your data stays on your device.">
+    <meta property="twitter:image" content="https://thebdgt.app/images/1024.png">
+    
+    <!-- App Store Meta -->
+    <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/1024.png">
+    <link rel="apple-touch-icon" href="images/1024.png">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "Bdgt",
+      "description": "Bdgt is a small, monthly budget tracker for iOS focused on simplicity. Track expenses with minimum setup, no currency, just numbers. All data stays on your device.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "iOS",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Bdgt"
+      },
+      "url": "https://thebdgt.app",
+      "downloadUrl": "https://apps.apple.com/app/bdgt",
+      "screenshot": "https://thebdgt.app/images/ss1.png",
+      "featureList": [
+        "Monthly budget tracking",
+        "Privacy-first design",
+        "Local data storage",
+        "Simple expense entry",
+        "Category management",
+        "No cloud sync required"
+      ],
+      "softwareVersion": "1.0",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "ratingCount": "1"
+      }
+    }
+    </script>
     <style>
         * {
             margin: 0;
@@ -13,7 +83,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            background-color: #f5f5f7;
+            background-color: #F2F2F7;
             color: #1d1d1f;
             line-height: 1.5;
         }
@@ -64,11 +134,11 @@
         }
 
         .screenshot {
-            width: 200px;
-            height: 430px;
-            border-radius: 24px;
+            width: 300px;
+            height: 630px;
+            border-radius: 50px;
             overflow: hidden;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
         }
 
         .screenshot img {
@@ -135,8 +205,9 @@
             }
 
             .screenshot {
-                width: 160px;
-                height: 320px;
+                width: 240px;
+                height: 510px;
+                border-radius: 40px;
             }
 
             .screenshot-container {
@@ -154,36 +225,41 @@
             }
 
             .screenshot {
-                width: 140px;
-                height: 300px;
+                width: 210px;
+                height: 445px;
+                border-radius: 30px;                
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo">
-            <img src="images/1024.png" alt="Bdgt Logo">
-        </div>
-
-        <h1>Budget tracking made simple</h1>
-        <p class="subtitle">Minimum setup. No currency. Just numbers.</p>
-
-        <div class="screenshot-container">
-            <div class="screenshot">
-                <img src="images/ss_1.png" alt="Bdgt app screenshot" loading="lazy">
+        <header>
+            <div class="logo">
+                <img src="images/1024.png" alt="Bdgt - Monthly Budget Tracker App Logo">
             </div>
-        </div>
 
-        <div class="download-section">
-            <p class="download-text">Available on the App Store</p>
-            <a href="https://thebdgt.app" class="app-store-button">
-                <img src="images/app_store_download.svg" alt="Download on the App Store">
-            </a>
-        </div>
+            <h1>Budget tracking made simple</h1>
+            <p class="subtitle">Minimum setup. No currency. Just numbers.</p>
+        </header>
+
+        <main>
+            <section class="screenshot-container" aria-label="App Screenshots">
+                <div class="screenshot">
+                    <img src="images/ss_1.png" alt="Bdgt app interface showing monthly budget overview with categories like Food, Transport, and Home expenses" loading="lazy">
+                </div>
+            </section>
+
+            <section class="download-section">
+                <p class="download-text">Available on the App Store</p>
+                <a href="https://thebdgt.app" class="app-store-button" aria-label="Download Bdgt on the App Store">
+                    <img src="images/app_store_download.svg" alt="Download on the App Store" width="119" height="40">
+                </a>
+            </section>
+        </main>
 
         <footer class="footer">
-            <p>© 2025 Bdgt. <a href="privacy-policy.html">Privacy Policy</a></p>
+            <p><a href="mailto:sergeimoistus@me.com">Support</a> | <a href="privacy-policy.html">Privacy Policy</a> | <a href="whatsnew.html">What's New?</a></p>
         </footer>
     </div>
 </body>
