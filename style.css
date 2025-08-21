@@ -401,6 +401,39 @@ p {
     border-top: 1px solid #d2d2d7;
 }
 
+/* Privacy Policy - Centered bulleted list styling */
+.privacy-centered-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: left;
+    display: inline-block;
+}
+
+.privacy-centered-list li {
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 1.125rem;
+    color: #1d1d1f;
+}
+
+.privacy-centered-list li:before {
+    content: "•";
+    color: #007aff;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* What's New page - Release date styling */
+.release-date {
+    font-size: 1rem;
+    color: #6e6e73;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
     .container, .privacy-container {
