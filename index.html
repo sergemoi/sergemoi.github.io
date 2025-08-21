@@ -37,6 +37,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/1024.png">
     <link rel="apple-touch-icon" href="images/1024.png">
     
+    <!-- Link to consolidated stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
@@ -74,178 +77,21 @@
       }
     }
     </script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            background-color: #F2F2F7;
-            color: #1d1d1f;
-            line-height: 1.5;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .logo {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 40px;
-            border-radius: 22px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        h1 {
-            font-size: 48px;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            margin-bottom: 16px;
-            color: #1d1d1f;
-        }
-
-        .subtitle {
-            font-size: 21px;
-            color: #86868b;
-            font-weight: 400;
-            margin-bottom: 60px;
-        }
-
-        .screenshot-container {
-            margin: 60px 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .screenshot {
-            width: 300px;
-            height: 630px;
-            border-radius: 50px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        }
-
-        .screenshot img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .download-section {
-            margin: 80px 0 40px;
-        }
-
-        .download-text {
-            font-size: 17px;
-            color: #86868b;
-            margin-bottom: 24px;
-        }
-
-        .app-store-button {
-            display: inline-block;
-            transition: transform 0.2s ease;
-        }
-
-        .app-store-button:hover {
-            transform: translateY(-2px);
-        }
-
-        .app-store-button img {
-            height: 50px;
-            width: auto;
-        }
-
-        .footer {
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 1px solid #d2d2d7;
-        }
-
-        .footer p {
-            font-size: 14px;
-            color: #86868b;
-        }
-
-        .footer a {
-            color: #007aff;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 40px 16px;
-            }
-
-            h1 {
-                font-size: 36px;
-            }
-
-            .subtitle {
-                font-size: 19px;
-            }
-
-            .screenshot {
-                width: 240px;
-                height: 510px;
-                border-radius: 40px;
-            }
-
-            .screenshot-container {
-                gap: 16px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 32px;
-            }
-
-            .subtitle {
-                font-size: 17px;
-            }
-
-            .screenshot {
-                width: 210px;
-                height: 445px;
-                border-radius: 30px;                
-            }
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
+    <div class="index-container">
         <header>
-            <div class="logo">
+            <div class="index-logo">
                 <img src="images/1024.png" alt="Bdgt - Monthly Budget Tracker App Logo">
             </div>
 
-            <h1>Budget tracking made simple</h1>
-            <p class="subtitle">Minimum setup. No currency. Just numbers.</p>
+            <h1 class="index-h1">Budget tracking made simple</h1>
+            <p class="index-subtitle">Minimum setup. No currency. Just numbers.</p>
         </header>
 
         <main>
             <section class="screenshot-container" aria-label="App Screenshots">
-                <div class="screenshot">
+                <div class="index-screenshot">
                     <img src="images/ss_1.png" alt="Bdgt app interface showing monthly budget overview with categories like Food, Transport, and Home expenses" loading="lazy">
                 </div>
             </section>
@@ -259,7 +105,10 @@
         </main>
 
         <footer class="footer">
-            <p><a href="mailto:sergeimoistus@me.com">Support</a> | <a href="privacy-policy.html">Privacy Policy</a> | <a href="whatsnew.html">What's New?</a></p>
+            <p>
+                <a href="whatsnew.html">What's New?</a>
+                <a href="mailto:sergeimoistus@me.com">Support</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
         </footer>
     </div>
 </body>
