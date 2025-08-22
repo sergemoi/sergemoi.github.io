@@ -264,7 +264,7 @@ p {
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
 }
 
-/* Footer */
+/* Enhanced Footer Styles */
 .footer {
     text-align: center;
     padding: 40px 0;
@@ -275,22 +275,58 @@ p {
 .footer p {
     color: #6e6e73;
     font-size: 0.95rem;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0; /* Remove gap, we'll handle spacing with padding */
 }
 
 .footer a {
     color: #007aff;
     text-decoration: none;
-    padding: 0 12px; /* Reduced padding to prevent wrapping */
+    padding: 8px 16px; /* Increased vertical padding for better touch targets */
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    border-radius: 6px;
 }
 
 .footer a:hover {
     text-decoration: underline;
+    background-color: rgba(0, 122, 255, 0.05);
+}
+
+.footer a:focus {
+    outline: 2px solid #007aff;
+    outline-offset: 2px;
 }
 
 /* Responsive footer spacing */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .footer {
+        padding: 30px 0;
+    }
+    
+    .footer p {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
     .footer a {
-        padding: 0 8px; /* Even less padding on smaller screens */
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 25px 0;
+    }
+    
+    .footer a {
+        padding: 10px 16px;
+        font-size: 0.95rem;
     }
 }
 
