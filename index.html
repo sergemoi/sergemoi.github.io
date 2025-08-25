@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bdgt - Simple Monthly Budget Tracker for iOS | Privacy-First Budgeting App</title>
+    <title>Bdgt - Monthly Budget Tracker for iOS</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Bdgt is a simple, privacy-focused monthly budget tracker for iOS. Track expenses with minimum setup, no currency, just numbers. All data stays on your device.">
-    <meta name="keywords" content="budget tracker, iOS app, monthly budget, expense tracker, privacy-first, simple budgeting, personal finance, budget app">
+    <meta name="description" content="Bdgt is a small, monthly budget tracker for iOS focused on simplicity. Track expenses with minimum setup, no currency, just numbers. All data stays on your device.">
+    <meta name="keywords" content="budget tracker, iOS app, monthly budget, expense tracker, easy, simple budgeting, personal finance, budget app">
     <meta name="author" content="Bdgt">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://thebdgt.app">
@@ -15,20 +15,20 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thebdgt.app">
-    <meta property="og:title" content="Bdgt - Simple Monthly Budget Tracker for iOS">
-    <meta property="og:description" content="Privacy-focused budget tracking app. Minimum setup, no currency, just numbers. All your data stays on your device.">
+    <meta property="og:title" content="Bdgt - Monthly Budget Tracker for iOS">
+    <meta property="og:description" content="Bdgt is a small, monthly budget tracker for iOS focused on simplicity. Minimum setup, no currency, just numbers. All your data stays on your device.">
     <meta property="og:image" content="https://thebdgt.app/images/1024.png">
     <meta property="og:site_name" content="Bdgt">
     
     <!-- Twitter Card -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://thebdgt.app">
-    <meta property="twitter:title" content="Bdgt - Simple Monthly Budget Tracker for iOS">
-    <meta property="twitter:description" content="Privacy-focused budget tracking app. Minimum setup, no currency, just numbers. All your data stays on your device.">
+    <meta property="twitter:title" content="Bdgt - Monthly Budget Tracker for iOS">
+    <meta property="twitter:description" content="Bdgt is a small, monthly budget tracker for iOS focused on simplicity. Minimum setup, no currency, just numbers. All your data stays on your device.">
     <meta property="twitter:image" content="https://thebdgt.app/images/1024.png">
     
     <!-- App Store Meta -->
-    <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID">
+    <meta name="apple-itunes-app" content="app-id=6749635860">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -37,13 +37,197 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/1024.png">
     <link rel="apple-touch-icon" href="images/1024.png">
     
+    <!-- Link to consolidated stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Additional styles for better text formatting -->
+    <style>
+        .description-section {
+            max-width: 700px;
+            margin: 60px auto;
+            text-align: center;
+        }
+        
+        .description-section .description-content {
+            text-align: center;
+        }
+        
+        .description-section .feature-section {
+            text-align: center;
+        }
+        
+        .description-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 30px;
+            letter-spacing: -0.02em;
+        }
+        
+        .description-content {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #1d1d1f;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .description-content p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            color: #1d1d1f;
+            text-align: left;
+        }
+        
+        .feature-section {
+            margin: 25px 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .feature-section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 15px;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+            text-align: left;
+            display: inline-block;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.95rem;
+            color: #1d1d1f;
+        }
+        
+        .feature-list li:before {
+            content: "•";
+            color: #007aff;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .versions-section {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .versions-section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .version-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .version-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        .version-card h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 10px;
+        }
+        
+        .version-card .version-subtitle {
+            font-size: 0.95rem;
+            color: #6e6e73;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .version-card .feature-list li {
+            font-size: 0.9rem;
+            padding: 6px 0;
+            padding-left: 18px;
+        }
+        
+        .version-card .feature-list li:before {
+            content: "•";
+            color: #007aff;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .description-title {
+                font-size: 1.8rem;
+            }
+            
+            .description-content {
+                font-size: 0.95rem;
+            }
+            
+            .version-comparison {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .versions-section {
+                padding: 25px 20px;
+            }
+        }
+        
+        /* Privacy Policy - Centered bulleted list styling */
+        .privacy-centered-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            text-align: left;
+            display: inline-block;
+        }
+        
+        .privacy-centered-list li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 1.125rem;
+            color: #1d1d1f;
+        }
+        
+        .privacy-centered-list li:before {
+            content: "•";
+            color: #007aff;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+    
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "MobileApplication",
       "name": "Bdgt",
-      "description": "Simple, privacy-focused monthly budget tracker for iOS. Track expenses with minimum setup, no currency, just numbers. All data stays on your device.",
+      "description": "Bdgt is a small, monthly budget tracker for iOS focused on simplicity. Track expenses with minimum setup, no currency, just numbers. All data stays on your device.",
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "iOS",
       "offers": {
@@ -74,200 +258,94 @@
       }
     }
     </script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            background-color: #F2F2F7;
-            color: #1d1d1f;
-            line-height: 1.5;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .logo {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 40px;
-            border-radius: 22px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        h1 {
-            font-size: 48px;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            margin-bottom: 16px;
-            color: #1d1d1f;
-        }
-
-        .subtitle {
-            font-size: 21px;
-            color: #86868b;
-            font-weight: 400;
-            margin-bottom: 60px;
-        }
-
-        .screenshot-container {
-            margin: 60px 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .screenshot {
-            width: 300px;
-            height: 600px;
-            border-radius: 36px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        }
-
-        .screenshot img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .download-section {
-            margin: 80px 0 40px;
-        }
-
-        .download-text {
-            font-size: 17px;
-            color: #86868b;
-            margin-bottom: 24px;
-        }
-
-        .app-store-button {
-            display: inline-block;
-            transition: transform 0.2s ease;
-            text-decoration: none;
-            border: none;
-            outline: none;
-        }
-
-        .app-store-button:hover {
-            transform: translateY(-2px);
-            text-decoration: none;
-        }
-
-        .app-store-button:focus {
-            outline: 2px solid #007aff;
-            outline-offset: 2px;
-        }
-
-        .app-store-button img {
-            height: 50px;
-            width: auto;
-        }
-
-        .footer {
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 1px solid #d2d2d7;
-        }
-
-        .footer p {
-            font-size: 14px;
-            color: #86868b;
-        }
-
-        .footer a {
-            color: #007aff;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 40px 16px;
-            }
-
-            h1 {
-                font-size: 36px;
-            }
-
-            .subtitle {
-                font-size: 19px;
-            }
-
-            .screenshot {
-                width: 240px;
-                height: 480px;
-            }
-
-            .screenshot-container {
-                gap: 16px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 32px;
-            }
-
-            .subtitle {
-                font-size: 17px;
-            }
-
-            .screenshot {
-                width: 210px;
-                height: 420px;
-            }
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
+    <div class="index-container">
         <header>
-            <div class="logo">
-                <img src="images/1024.png" alt="Bdgt - Simple Budget Tracker App Logo">
+            <div class="index-logo">
+                <img src="images/1024.png" alt="Bdgt - Monthly Budget Tracker App Logo">
             </div>
 
-            <h1>Budget tracking made simple</h1>
-            <p class="subtitle">Minimum setup. No currency. Just numbers.</p>
+            <h1 class="index-h1">Budget tracking made simple</h1>
+            <p class="index-subtitle">Minimum setup. No currency. Just numbers.</p>
         </header>
 
         <main>
             <section class="screenshot-container" aria-label="App Screenshots">
-                <div class="screenshot">
-                    <img src="images/ss1.png" alt="Bdgt app interface showing monthly budget overview with categories like Food, Transport, and Home expenses" loading="lazy">
+                <div class="index-screenshot">
+                    <img src="images/ss_1.png" alt="Bdgt app interface showing monthly budget overview with categories like Food, Transport, and Home expenses" loading="lazy">
+                </div>
+            </section>
+
+            <section class="description-section">
+                <h2 class="description-title">A budget app that doesn't get in your way.</h2>
+                
+                <div class="description-content">
+                    <p>Bdgt strips away the complexity that makes other apps overwhelming. No charts to analyze, no currencies to configure, no accounts to create. Just simple transaction tracking that helps you stay aware of your monthly spending.</p>
+                    
+                    <div class="feature-section">
+                        <h3>Designed for doing, not analyzing:</h3>
+                        <ul class="feature-list">
+                            <li>Add transactions in seconds with smart suggestions</li>
+                            <li>Effortless swipe gestures for daily operations</li>
+                            <li>Clean interface focused on your current month</li>
+                            <li>Multiple income sources for freelancers and contractors</li>
+                            <li>Export your data anytime - CSV or PDF formats</li>
+                            <li>Instant balance updates as you track expenses</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-section">
+                        <h3>Built for simplicity:</h3>
+                        <ul class="feature-list">
+                            <li>Minimum setup required - start budgeting immediately</li>
+                            <li>Work with any currency using plain numbers</li>
+                            <li>Distraction-free design without overwhelming charts</li>
+                            <li>Intuitive category management up to 15 per month</li>
+                            <li>Local data storage - your privacy, your control</li>
+                        </ul>
+                    </div>
+
+                    <div class="versions-section">
+                        <h3>Two versions to fit your needs:</h3>
+                        <div class="version-comparison">
+                            <div class="version-card">
+                                <h4>Free Version</h4>
+                                <p class="version-subtitle">Perfect for basic budgeting</p>
+                                <ul class="feature-list">
+                                    <li>3 months per year</li>
+                                    <li>3 categories per month</li>
+                                    <li>10 transactions per category</li>
+                                    <li>6 income sources per month</li>
+                                </ul>
+                            </div>
+                            <div class="version-card">
+                                <h4>Pro Version</h4>
+                                <p class="version-subtitle">For expanded tracking</p>
+                                <ul class="feature-list">
+                                    <li>Unlimited months per year</li>
+                                    <li>15 categories per month</li>
+                                    <li>45 transactions per category</li>
+                                    <li>6 income sources per month</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>Bdgt is for people who want to track spending without the complexity. No overwhelming features, no distractions. Just simple budgeting that works.</p>
                 </div>
             </section>
 
             <section class="download-section">
-                <!-- <p class="download-text">Available on the App Store</p> -->
-                <a href="https://thebdgt.app" class="app-store-button" aria-label="Download Bdgt on the App Store">
+                <!-- <p class="download-text">Available soon on the App Store</p> -->
+                <a href="https://apps.apple.com/us/app/bdgt-monthly-budget-tracker/id6749635860" class="app-store-button" aria-label="Download Bdgt on the App Store">
                     <img src="images/app_store_download.svg" alt="Download on the App Store" width="119" height="40">
                 </a>
             </section>
         </main>
-
-        <footer class="footer">
-            <p>© 2025 Bdgt. <a href="privacy-policy.html">Privacy Policy</a></p>
-        </footer>
     </div>
+
+<script src="footer.js"></script>
+    
 </body>
 </html>
