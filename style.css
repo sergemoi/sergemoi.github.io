@@ -132,18 +132,35 @@ p {
     margin-bottom: 24px;
 }
 
+/* App Store Button*/
 .app-store-button {
     display: inline-block;
     transition: transform 0.2s ease;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    background: transparent;
 }
 
 .app-store-button:hover {
     transform: translateY(-2px);
+    text-decoration: none;
+    outline: none;
+}
+
+.app-store-button:focus {
+    outline: 2px solid #007aff;
+    outline-offset: 4px;
+    border-radius: 8px;
 }
 
 .app-store-button img {
     height: 50px;
     width: auto;
+    border: none;
+    outline: none;
+    background: transparent;
+    display: block;
 }
 
 /* Screenshot Styles */
