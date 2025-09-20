@@ -7,7 +7,7 @@
     <!-- Main landing page -->
     <url>
         <loc>https://thebdgt.app/</loc>
-        <lastmod>2025-08-21</lastmod>
+        <lastmod>2025-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -23,7 +23,7 @@
     <!-- App Store redirect (if you have one) -->
     <url>
         <loc>https://apps.apple.com/us/app/bdgt-monthly-budget-tracker/id6749635860</loc>
-        <lastmod>2025-08-27</lastmod>
+        <lastmod>2025-09-20</lastmod>
         <changefreq>never</changefreq>
         <priority>0.8</priority>
     </url>
