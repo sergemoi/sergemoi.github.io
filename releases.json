@@ -1,6 +1,10 @@
 {
   "releases": [
     {
+      "version": "1.0.6",
+      "description": "- Transactions can now be reassigned to a different category during editing\n- Small improvements in UI"
+    },
+    {
       "version": "1.0.5",
       "description": "Recurring transaction templates (experimental). Create up to 3 (Free) or 10 (Pro) templates for transaction suggestions you log on monthly basis. Some improvements under the hood."
     },
