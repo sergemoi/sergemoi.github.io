@@ -10,7 +10,7 @@
         } else if (release.changes && Array.isArray(release.changes)) {
             // Multiple changes as bullet list
             contentHTML = `
-                <ul class="privacy-centered-list">
+                <ul class="centered-list">
                     ${release.changes.map(change => `<li>${change}</li>`).join('\n                    ')}
                 </ul>
             `;

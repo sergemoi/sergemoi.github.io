@@ -347,19 +347,19 @@ p {
     }
 }
 
-/* Privacy Policy Specific Styles */
-.privacy-container {
+/* Page Layout Styles */
+.page-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 40px 20px;
 }
 
-.privacy-header {
+.page-header {
     text-align: center;
     margin-bottom: 60px;
 }
 
-.privacy-header h1 {
+.page-header h1 {
     font-size: 3rem;
     font-weight: 600;
     letter-spacing: -0.02em;
@@ -367,7 +367,7 @@ p {
     color: #1d1d1f;
 }
 
-.privacy-header .subtitle {
+.page-header .subtitle {
     font-size: 1.25rem;
     color: #6e6e73;
     font-weight: 400;
@@ -454,8 +454,8 @@ p {
     border-top: 1px solid #d2d2d7;
 }
 
-/* Privacy Policy - Centered bulleted list styling */
-.privacy-centered-list {
+/* Centered bulleted list styling */
+.centered-list {
     list-style: none;
     padding: 0;
     margin: 20px 0;
@@ -463,7 +463,7 @@ p {
     display: inline-block;
 }
 
-.privacy-centered-list li {
+.centered-list li {
     padding: 8px 0;
     padding-left: 20px;
     position: relative;
@@ -471,7 +471,7 @@ p {
     color: #1d1d1f;
 }
 
-.privacy-centered-list li:before {
+.centered-list li:before {
     content: "•";
     color: #007aff;
     font-weight: bold;
@@ -489,7 +489,7 @@ p {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-    .container, .privacy-container {
+    .container, .page-container {
         padding: 0 16px;
     }
     
@@ -567,16 +567,16 @@ p {
         font-size: 2rem;
     }
 
-    /* Privacy Policy Mobile */
-    .privacy-container {
+    /* Page Layout Mobile */
+    .page-container {
         padding: 30px 16px;
     }
-    
-    .privacy-header h1 {
+
+    .page-header h1 {
         font-size: 2.5rem;
     }
-    
-    .privacy-header .subtitle {
+
+    .page-header .subtitle {
         font-size: 1.1rem;
     }
     
@@ -635,8 +635,8 @@ p {
         padding: 40px 20px;
     }
 
-    /* Privacy Policy Mobile Small */
-    .privacy-header h1 {
+    /* Page Layout Mobile Small */
+    .page-header h1 {
         font-size: 2rem;
     }
     
