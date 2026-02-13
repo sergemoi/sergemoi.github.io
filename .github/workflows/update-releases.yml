@@ -1,0 +1,74 @@
+name: Update Release Notes
+
+on:
+  repository_dispatch:
+    types: [app_store_update]
+
+  # Allow manual trigger for testing
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'App version'
+        required: true
+      release_notes:
+        description: 'Release notes'
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  update-releases:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Update releases.json
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = 'releases.json';
+
+            // Get data from dispatch or manual input
+            const version = context.payload.client_payload?.version || context.payload.inputs?.version;
+            const notes = context.payload.client_payload?.release_notes || context.payload.inputs?.release_notes;
+            const date = context.payload.client_payload?.release_date || new Date().toISOString();
+            const appName = context.payload.client_payload?.app_name || 'My App';
+
+            // Read existing releases
+            let releases = [];
+            if (fs.existsSync(path)) {
+              releases = JSON.parse(fs.readFileSync(path, 'utf8'));
+            }
+
+            // Check if this version already exists
+            if (releases.some(r => r.version === version)) {
+              console.log(`Version ${version} already exists, skipping.`);
+              return;
+            }
+
+            // Add new release at the top
+            releases.unshift({
+              version,
+              date: date.split('T')[0],
+              notes,
+              app_name: appName
+            });
+
+            // Keep last 20 releases
+            releases = releases.slice(0, 20);
+
+            // Write back
+            fs.writeFileSync(path, JSON.stringify(releases, null, 2));
+            console.log(`Added version ${version}`);
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add releases.json
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "Update release notes: v${{ github.event.client_payload.version || github.event.inputs.version }}"
+          git push
