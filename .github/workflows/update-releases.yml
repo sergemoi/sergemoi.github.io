@@ -1,74 +1,84 @@
 name: Update Release Notes
 
 on:
-  repository_dispatch:
-    types: [app_store_update]
+  schedule:
+    # Runs every 6 hours. Adjust as needed:
+    # Every hour:  '0 * * * *'
+    # Every 12h:   '0 */12 * * *'
+    # Once daily:  '0 9 * * *'
+    - cron: '0 */12 * * *'
 
-  # Allow manual trigger for testing
+  # Manual trigger for testing
   workflow_dispatch:
-    inputs:
-      version:
-        description: 'App version'
-        required: true
-      release_notes:
-        description: 'Release notes'
-        required: true
 
 permissions:
   contents: write
 
+env:
+  APP_STORE_ID: '6749635860'
+  APP_STORE_COUNTRY: 'us'
+
 jobs:
-  update-releases:
+  check-and-update:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Update releases.json
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const fs = require('fs');
-            const path = 'releases.json';
+      - name: Check App Store and update releases
+        id: check
+        run: |
+          set -e
 
-            // Get data from dispatch or manual input
-            const version = context.payload.client_payload?.version || context.payload.inputs?.version;
-            const notes = context.payload.client_payload?.release_notes || context.payload.inputs?.release_notes;
-            const date = context.payload.client_payload?.release_date || new Date().toISOString();
-            const appName = context.payload.client_payload?.app_name || 'My App';
+          echo "🔍 Fetching App Store data..."
+          RESPONSE=$(curl -sf "https://itunes.apple.com/lookup?id=${APP_STORE_ID}&country=${APP_STORE_COUNTRY}")
 
-            // Read existing releases
-            let releases = [];
-            if (fs.existsSync(path)) {
-              releases = JSON.parse(fs.readFileSync(path, 'utf8'));
-            }
+          # Parse response
+          VERSION=$(echo "$RESPONSE" | jq -r '.results[0].version')
+          DESCRIPTION=$(echo "$RESPONSE" | jq -r '.results[0].releaseNotes')
+          DATE=$(echo "$RESPONSE" | jq -r '.results[0].currentVersionReleaseDate')
+          APP_NAME=$(echo "$RESPONSE" | jq -r '.results[0].trackName')
 
-            // Check if this version already exists
-            if (releases.some(r => r.version === version)) {
-              console.log(`Version ${version} already exists, skipping.`);
-              return;
-            }
+          if [ "$VERSION" = "null" ] || [ -z "$VERSION" ]; then
+            echo "Could not fetch app info. Check your APP_STORE_ID."
+            exit 1
+          fi
 
-            // Add new release at the top
-            releases.unshift({
-              version,
-              date: date.split('T')[0],
-              notes,
-              app_name: appName
-            });
+          echo "App: $APP_NAME"
+          echo "Latest version: $VERSION"
 
-            // Keep last 20 releases
-            releases = releases.slice(0, 20);
+          # Initialize releases.json if it doesn't exist
+          if [ ! -f releases.json ]; then
+            echo '{"releases":[]}' > releases.json
+          fi
 
-            // Write back
-            fs.writeFileSync(path, JSON.stringify(releases, null, 2));
-            console.log(`Added version ${version}`);
+          # Check if this version already exists
+          EXISTS=$(jq -r --arg v "$VERSION" 'any(.releases[]; .version == $v)' releases.json)
+
+          if [ "$EXISTS" = "true" ]; then
+            echo "Version $VERSION already recorded. Nothing to do."
+            exit 0
+          fi
+
+          echo "New version detected! Updating releases.json..."
+
+          # Add new release to the top and keep last 20
+          jq --arg v "$VERSION" \
+             --arg n "$DESCRIPTION" \
+             '{releases: ([{version: $v, description: $n}] + .releases | .[0:20])}' \
+             releases.json > releases_tmp.json
+
+          mv releases_tmp.json releases.json
+
+          echo "updated=true" >> $GITHUB_OUTPUT
+          echo "new_version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Commit and push
+        if: ${{ steps.check.outputs.updated == 'true' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add releases.json
-          git diff --cached --quiet && echo "No changes" && exit 0
-          git commit -m "Update release notes: v${{ github.event.client_payload.version || github.event.inputs.version }}"
+          git commit -m "Release notes: v${NEW_VERSION}"
           git push
+          echo "Pushed update for v${NEW_VERSION}"
