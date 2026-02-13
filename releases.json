@@ -2,7 +2,7 @@
   "releases": [
     {
       "version": "1.0.6",
-      "description": "- Transactions can now be reassigned to a different category during editing\n- Small improvements in UI"
+      "description": "Transactions can now be reassigned to a different category during editing. Small improvements in UI."
     },
     {
       "version": "1.0.5",
