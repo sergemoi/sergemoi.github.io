@@ -1,6 +1,10 @@
 {
   "releases": [
     {
+      "version": "1.1.1",
+      "description": "Home Screen Widget - add Bdgt to your home screen to see your current month's balance, income, and top spending categories at a glance. Available in small and medium sizes.\nApp appearance can now follow your device's light/dark mode (enabled in Settings).\nBug fixes and performance improvements."
+    },
+    {
       "version": "1.0.6",
       "description": "Transactions can now be reassigned to a different category during editing. Small improvements in UI."
     },
