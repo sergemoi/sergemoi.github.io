@@ -4,14 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bdgt - What's New</title>
-    <link rel="stylesheet" href="style.css">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/1024.png">
     <link rel="apple-touch-icon" href="images/1024.png">
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav class="topnav">
+        <a href="index.html" class="nav-logo">
+            <img src="images/1024.png" alt="Bdgt logo" class="nav-logo-img">
+            <span class="nav-logo-text">Bdgt</span>
+        </a>
+        <a href="https://apps.apple.com/us/app/bdgt-monthly-budget-tracker/id6749635860"
+           class="nav-download"
+           aria-label="Download Bdgt on the App Store">
+            Download
+        </a>
+    </nav>
+
     <div class="page-container">
         <div class="page-header">
             <h1>What's New</h1>
@@ -21,14 +38,13 @@
         <div id="releases-container">
             <div class="content">
                 <div class="section">
-                    <p style="color: #6e6e73;">Loading releases...</p>
+                    <p>Loading releases&hellip;</p>
                 </div>
             </div>
         </div>
     </div>
 
-<script src="releases.js"></script>
-<script src="footer.js"></script>
-
+    <script src="releases.js"></script>
+    <script src="footer.js"></script>
 </body>
 </html>
